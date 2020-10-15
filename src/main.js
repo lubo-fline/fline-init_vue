@@ -39,6 +39,12 @@ import "ant-design-vue/dist/antd.less";
 import "./assets/css/components.less";
 import "./assets/css/common.css";
 import "./assets/css/style.less";
+//  引入字体图标
+import { Icon } from 'ant-design-vue';
+const IconFont = Icon.createFromIconfontCN({
+	scriptUrl: '//at.alicdn.com/t/font_1579320_l8i8bz2owe.js',
+});
+Vue.component('IconFont', IconFont);
 /* 引入全局组件 */
 import './utils/filter' // global filter
 Vue.config.productionTip = false
