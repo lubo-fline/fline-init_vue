@@ -2,7 +2,7 @@
     <a-layout id="components-layout-demo-fixed">
         <a-layout-header>
             <span class='fontSize20'>
-                <icon :iconName='"iconlogo"'></icon>
+                <icon-font :type='"iconlogo"'></icon>//需要修改logo图标
                 <span class='marginL15'>{{$t('lang.projectName')}}</span>
             </span>
             <div class='pull-right'>
@@ -38,7 +38,6 @@
 </template>
 
 <script>
-import icon from '@/components/Icon.vue'
 export default {
     data(){
         return{
@@ -61,9 +60,6 @@ export default {
     },
     created(){
         // this.loadCurrentUser();
-    },
-    components:{
-        icon,
     },
     methods:{
         loadCurrentUser(){
