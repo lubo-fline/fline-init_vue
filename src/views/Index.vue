@@ -2,7 +2,7 @@
     <a-layout id="components-layout-demo-fixed">
         <a-layout-header>
             <span class='fontSize20'>
-                <icon-font :type='"iconlogo"'></icon-font>//需要修改logo图标
+                <icon-font :type='"iconlogo"'></icon-font><!--需要修改logo图标-->
                 <span class='marginL15'>{{$t('lang.projectName')}}</span>
             </span>
             <div class='pull-right'>
