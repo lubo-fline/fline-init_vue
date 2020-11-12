@@ -3,7 +3,7 @@
         <a-layout-header>
             <span class='fontSize20'>
                 <icon-font :type='"iconlogo"'></icon-font><!--需要修改logo图标-->
-                <span class='marginL15'>{{$t('lang.projectName')}}</span>
+                <span class='marginL15'>{{staticData.potalEnteryName}}</span>
             </span>
             <div class='pull-right'>
                 <a-icon type="bell" />
@@ -38,9 +38,11 @@
 </template>
 
 <script>
+const staticData = window.staticContentConfig.staticData
 export default {
     data(){
         return{
+            staticData,
             rootSubmenuKeys: ['1', '2'],
             openKeys: ['main0'],
             defaultSelectedKeys:['0'],

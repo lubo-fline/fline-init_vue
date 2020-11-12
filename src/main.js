@@ -42,7 +42,7 @@ import "./assets/css/style.less";
 //  引入字体图标
 import { Icon } from 'ant-design-vue';
 const IconFont = Icon.createFromIconfontCN({
-	scriptUrl: '//at.alicdn.com/t/font_1579320_l8i8bz2owe.js',
+	scriptUrl: window.staticContentConfig.staticData.IconfontUrl,
 });
 Vue.component('IconFont', IconFont);
 /* 引入全局组件 */
@@ -50,10 +50,6 @@ import './utils/filter' // global filter
 Vue.config.productionTip = false
 const i18n = new VueI18n({
     locale: 'zh-CN', // 语言标识, 通过切换locale的值来实现语言切换,this.$i18n.locale 
-    messages: {
-        'zh-CN': require('../public/lang/zh.json'), // 中文语言包
-        'en-US': require('../public/lang/en.json') // 英文语言包
-    }
 })
 new Vue({
     router,
