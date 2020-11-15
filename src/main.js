@@ -45,6 +45,9 @@ const IconFont = Icon.createFromIconfontCN({
 	scriptUrl: window.staticContentConfig.staticData.IconfontUrl,
 });
 Vue.component('IconFont', IconFont);
+/*api*/
+import api from '@/api/index'
+Vue.prototype.$api = api
 /* 引入全局组件 */
 import './utils/filter' // global filter
 Vue.config.productionTip = false
