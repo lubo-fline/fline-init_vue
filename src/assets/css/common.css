@@ -1,67 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* margin  */
+.noMargin {
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.margin8 {
+    margin: 8px;
+}
+
+.marginT8 {
+    margin-top: 8px;
+}
+
+.marginR8 {
+    margin-right: 8px;
+}
+
+.marginB8 {
+    margin-bottom: 8px;
+}
+
+.marginL8 {
+    margin-left: 8px;
+}
+
+.margin16 {
+    margin: 16px;
+}
+
+.marginT16 {
+    margin-top: 16px !important;
+}
+
+.marginR16 {
+    margin-right: 16px;
+}
+
+.marginB16 {
+    margin-bottom: 16px;
+}
+
+.marginL16 {
+    margin-left: 16px;
+}
+
+.margin24 {
+    margin: 24px;
+}
+
+.marginT24 {
+    margin-top: 24px;
+}
+
+.marginR24 {
+    margin-right: 24px;
+}
+
+.marginB24 {
+    margin-bottom: 24px;
+}
+
+.marginL24 {
+    margin-left: 24px;
+}
+
+.margin32 {
+    margin: 32px;
+}
+
+.marginT32 {
+    margin-top: 32px;
+}
+
+.marginR32 {
+    margin-right: 32px;
+}
+
+.marginB32 {
+    margin-bottom: 32px;
+}
+
+.marginL32 {
+    margin-left: 32px;
+}
+
+/* .margin  */
+
+/* padding  */
+.noPadding {
+    padding: 0;
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+}
+
+.padding8 {
+    padding: 8px;
+}
+
+.paddingT8 {
+    padding-top: 8px;
+}
+
+.paddingR8 {
+    padding-right: 8px;
+}
+
+.paddingB8 {
+    padding-bottom: 8px;
+}
+
+.paddingL8 {
+    padding-left: 8px;
+}
+
+.padding16 {
+    padding: 16px;
+}
+
+.paddingT16 {
+    padding-top: 16px;
+}
+
+.paddingR16 {
+    padding-right: 16px;
+}
+
+.paddingB16 {
+    padding-bottom: 16px;
+}
+
+.paddingL16 {
+    padding-left: 16px;
+}
+
+.padding24 {
+    padding: 24px;
+}
+
+.paddingT24 {
+    padding-top: 24px;
+}
+
+.paddingR24 {
+    padding-right: 24px;
+}
+
+.paddingB24 {
+    padding-bottom: 24px;
+}
+
+.paddingL24 {
+    padding-left: 24px;
+}
+
+.padding32 {
+    padding: 32px;
+}
+
+.paddingT32 {
+    padding-top: 32px;
+}
+
+.paddingR32 {
+    padding-right: 32px;
+}
+
+.paddingB32 {
+    padding-bottom: 32px;
+}
+
+.paddingL32 {
+    padding-left: 32px;
+}
+
+/* .padding  */
+
+/* height  */
+.height64 {
+    height: 64px;
+}
+
+.height200 {
+    height: 200px;
+}
+
+.height240 {
+    height: 240px;
+}
+
+.height250 {
+    height: 250px;
+}
+
+.height260 {
+    height: 260px;
+}
+
+.height270 {
+    height: 270px;
+}
+
+.height280 {
+    height: 280px;
+}
+
+.height290 {
+    height: 290px;
+}
+
+.height300 {
+    height: 300px;
+}
+
+/* .height  */
+/* width */
+.width120 {
+    width: 120px !important;
+}
+
+.widthP100 {
+    width: 100%;
+}
+
+/* .width */
+/*color*/
+.color0988ff {
+    color: #0988ff;
+}
+
+.colorfff {
+    color: #fff;
+}
+
+.colorRed {
+    color: red;
+}
+/* border_radius */
+.border_radiusT_LR {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.border_radius {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+/* .border_radius */
+/* font-size */
+.fontSize12 {
+    font-size: 12px;
+}
+
+.fontSize13 {
+    font-size: 13px;
+}
+
+.fontSize14 {
+    font-size: 14px;
+}
+
+.fontSize16 {
+    font-size: 16px;
+}
+
+.fontSize18 {
+    font-size: 18px;
+}
+
+.fontSize20 {
+    font-size: 20px;
+}
+
+.fontSize22 {
+    font-size: 22px;
+}
+
+.fontSize28 {
+    font-size: 28px;
+}
+
+/* .font-size */
 /** webkit滚动条样式 **/
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
 }
+
 /* 滚动槽 */
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 6px #ccc;
     border-radius: 10px;
 }
+
 /* 滚动条滑块 */
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background: #ccc;
     -webkit-box-shadow: inset 6px #ccc;
 }
+
 ::-webkit-scrollbar-thumb:window-inactive {
     background: #ccc;
 }
+
 body {
     padding: 0;
     margin: 0;
 }
+
 /*bootstrap常用样式*/
 .text-right {
     text-align: right;
 }
+
+.text-center {
+    text-align: center;
+}
+
 .pull-right {
     float: right;
 }
+
 .clearBoth {
     clear: both;
 }
+
 /*自定义单行样式*/
 .cursorP {
     cursor: pointer;
 }
+
 .displayBlock {
     display: block;
 }
-.overflowHidden {
-    overflow: hidden;
-}
-.colorfff {
-    color: #fff;
-}
-.fontSize14 {
-    font-size: 14px;
-}
-.fontSize20 {
-    font-size: 20px;
-}
-.marginB10 {
-    margin-bottom: 10px;
-}
-.marginT20{
-    margin-top: 20px;
-}
-.marginL15{
-    margin-left:15px;
-}
-.padding0 {
-    padding: 0;
-}
+
 /*自定义单组件样式*/
 .icon {
     width: 1.5em;
@@ -74,4 +360,12 @@ body {
 .icon svg {
     width: 100%;
     height: 100%;
+}
+
+
+/*  超出隐藏，省略号显示 */
+.overhidden {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
