@@ -26,7 +26,7 @@ axios.interceptors.response.use(
     error => {
         if (error.response.data.code) {
             if (error.response.data.code === 401) {
-                message.error(response.data.msg)
+                message.error(error.response.data.msg)
                 Router.push({
                     name: 'login'
                 })
