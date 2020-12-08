@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@antv/data-set": "^0.10.2",
-    "ant-design-vue": "^1.5.0-rc.3",
+    "ant-design-vue": "^1.7.2",
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.26.0",
