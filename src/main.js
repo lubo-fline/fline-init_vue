@@ -15,8 +15,6 @@ Moment.locale("zh-cn");
 import md5 from "js-md5";
 /*引入mock */
 import "./mock/index.js";
-/** 可视化界面图表插件 **/
-import viserVue from 'viser-vue'
 const options = {
     namespace: '', // key prefix
     name: 'ls', // name variable Vue.[ls] or this.[$ls],
@@ -24,12 +22,14 @@ const options = {
 };
 Vue.use(Storage, options);
 Vue.use(Antd);
-Vue.use(viserVue)
 Vue.use(VueI18n);
 axios.defaults.baseURL = "/fline/";
 Vue.prototype.$axios = axios
 Vue.prototype.$qs = qs;
 Vue.prototype.$md5 = md5;
+/** 可视化界面图表插件 **/
+import * as echarts from 'echarts'
+Vue.prototype.$echarts = echarts
 /*引入路由控制 */
 import './permission'
 /*ie兼容es6*/
