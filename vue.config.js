@@ -38,7 +38,7 @@ module.exports = {
                     filename: '[path].gz[query]',
                     algorithm: 'gzip',
                     test: new RegExp(
-                    '\\.(' + productionGzipExtensions.join('|') + ')$'
+                        '\\.(' + productionGzipExtensions.join('|') + ')$'
                     ),
                     threshold: 10240, // 只有大小大于该值的资源会被处理 10240
                     minRatio: 0.8, // 只有压缩率小于这个值的资源才会被处理
@@ -88,7 +88,8 @@ module.exports = {
         proxy: {
             // 配置多个代理(配置一个 proxy: 'http://localhost:4000' )
             '/fline': {
-                target: 'http://127.0.0.1:8080/scada/',
+                target: 'http://172.16.1.224:3000/mock/478/', // 测试接口，用于测试 axios 封装
+                // target: 'http://127.0.0.1:8080/scada/',
                 // target: 'http://192.168.1.4:8999',
                 pathRewrite: {
                     '^/fline': '/'

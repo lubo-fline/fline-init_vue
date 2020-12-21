@@ -4,7 +4,7 @@ Vue.use(Router)
 // 此Router是自己自定义引入暴露出来的，即是自定义的，以下的Router同样是这样
 // 解决两次访问相同路由地址报错
 const originalPush = Router.prototype.push
-Router.prototype.push = function push (location) {
+Router.prototype.push = function push(location) {
 	return originalPush.call(this, location).catch(err => err)
 }
 export default new Router({
@@ -22,6 +22,15 @@ export default new Router({
 			name: 'index',
 			component: () => import('@/views/Index.vue'),
 			children: [
+				{
+					path: '/test',
+					name: 'test',
+					meta: {
+						isLogin: true,
+						title: '测试页面',
+					},
+					component: () => import('@/views/test/test.vue'),
+				},
 				{
 					path: '/userManagement',
 					name: 'userManagement',
