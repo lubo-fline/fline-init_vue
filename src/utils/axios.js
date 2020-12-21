@@ -1,6 +1,7 @@
 import axios from 'axios'
 import Router from '../router'
 import message from 'ant-design-vue/es/message'
+
 axios.interceptors.request.use(
     config => {
         return config
@@ -18,7 +19,7 @@ axios.interceptors.response.use(
             Router.push({
                 name: 'login'
             })
-        }else if (response.data.code !== 200) {
+        } else if (response.data.code !== 200) {
             message.error(response.data.msg)
         }
         return response
