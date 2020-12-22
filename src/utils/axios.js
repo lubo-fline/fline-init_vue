@@ -4,7 +4,7 @@ import message from 'ant-design-vue/es/message';
 import util from '@/utils';
 
 // TODO:测试数据
-util.cookies.set('JSESSIONID', '47A1FB9DF80FAF12EEE0415639EF9691');
+// util.cookies.set('JSESSIONID', '47A1FB9DF80FAF12EEE0415639EF9691');
 
 // 创建一个 axios 实例
 const service = axios.create({

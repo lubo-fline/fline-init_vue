@@ -32,7 +32,7 @@ export default {
                     path: "",
                     icon: "setting",
                     children: [
-                        { name: "测试页面", path: "test" },
+                        { name: "测试页面", path: "demo" },
                         {
                             name: "用户管理--单角色分配",
                             path: "userManagement",

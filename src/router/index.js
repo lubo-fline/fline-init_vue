@@ -23,13 +23,13 @@ export default new Router({
 			component: () => import('@/views/Index.vue'),
 			children: [
 				{
-					path: '/test',
-					name: 'test',
+					path: '/demo',
+					name: 'demo',
 					meta: {
 						isLogin: true,
 						title: '测试页面',
 					},
-					component: () => import('@/views/test/test.vue'),
+					component: () => import('@/views/demo/demo.vue'),
 				},
 				{
 					path: '/userManagement',
