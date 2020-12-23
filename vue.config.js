@@ -80,7 +80,7 @@ module.exports = {
     //反向代理
     devServer: {
         // 环境配置
-        host: 'localhost',
+        host: '0.0.0.0',
         port: 8010,
         https: false,
         hotOnly: false,
