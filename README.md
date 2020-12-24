@@ -1,24 +1,38 @@
-# vue前端框架模板
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run dev
-```
+# 项目简介
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## 项目名称: vue前端框架模板
 
-### Lints and fixes files
-```
-npm run lint
-```
+## 快速上手
+  - 安装: npm install
+  - 启动: npm run serve
+  - 打包: npm run build
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 演示地址
+    - [测试]: 
+    - 账号:
+        - 
+    - [演示]: 
+    - 账号:
+        - 
+
+## 人员安排
+    - 产品/项目经理:
+    - 设计:
+    - 前端:
+    - 开发: 
+    - 测试:
+
+## 文档说明
+  - [目录结构](./docs/文件列表.md)
+  - [迭代记录](./docs/更新日志.md)
+  - [接口文档地址](http://172.16.1.224:3000/project/469/interface/api/37858)
+  - 其他
+    - [全局模块列表](./docs/全局模块列表.md)
+
+## 分支管理
+* develop
+    - 测试分支
+* master
+    - 发布分支
