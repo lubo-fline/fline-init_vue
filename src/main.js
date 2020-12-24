@@ -39,7 +39,9 @@ import "ant-design-vue/dist/antd.less";
 import "./assets/css/components.less";
 import "./assets/css/common.css";
 import "./assets/css/style.less";
-//  引入字体图标
+/** 引入字体图标方式一：内网，无法访问互联网，需要下载图标代码 **/
+import "./assets/css/iconfont/iconfont.js";
+//  引入字体图标方式二：外网，可以访问互联网
 import { Icon } from 'ant-design-vue';
 const IconFont = Icon.createFromIconfontCN({
 	scriptUrl: window.staticContentConfig.staticData.IconfontUrl,
