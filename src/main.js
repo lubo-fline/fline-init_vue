@@ -34,13 +34,12 @@ Vue.prototype.$echarts = echarts
 import './permission'
 /*ie兼容es6*/
 import "babel-polyfill";
-import "ant-design-vue/dist/antd.less";
 /* 引入自己的css、less、js */
-import "./assets/css/components.less";
-import "./assets/css/common.css";
-import "./assets/css/style.less";
+import "@a/less/components.less";
+import "@a/less/common.less";
+import "@a/less/style.less";
 /** 引入字体图标方式一：内网，无法访问互联网，需要下载图标代码 **/
-import "./assets/font/iconfont.js";
+import "@a/font/iconfont.js";
 //  引入字体图标方式二：外网，可以访问互联网
 import { Icon } from 'ant-design-vue';
 const IconFont = Icon.createFromIconfontCN({

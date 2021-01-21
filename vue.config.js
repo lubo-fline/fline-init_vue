@@ -56,7 +56,9 @@ module.exports = {
                     '@': path.resolve(__dirname, './src'),
                     '@c': path.resolve(__dirname, './src/components'),
                     '@v': path.resolve(__dirname, './src/views'),
-                    '@a': path.resolve(__dirname, './src/assets')
+                    '@a': path.resolve(__dirname, './src/assets'),
+                    '@u': path.resolve(__dirname, './src/utils'),
+                    '@m': path.resolve(__dirname, './src/mixins')
                 } // 别名配置
             }
         })
@@ -67,11 +69,6 @@ module.exports = {
         sourceMap: true, // 开启 CSS source maps
         loaderOptions: {
             less: {
-                modifyVars: {
-                    'primary-color': '#4C6CEC',
-                    'link-color': '#4C6CEC',
-                    'border-radius-base': '2px',
-                },
                 javascriptEnabled: true,
             }
         }, // css预设器配置项
