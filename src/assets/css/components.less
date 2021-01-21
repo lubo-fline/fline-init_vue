@@ -1,110 +1,112 @@
+//解决分页分离样式问题
+.ant-pagination-options {
+    position: relative;
+}
+
 .ant-layout-header {
-    background: #fff !important;
-    box-shadow: 5px 0px 10px #ccc;
+    background: #fff;
     z-index: 2;
     width: 100%;
     height: 70px;
+    line-height: 70px;
+    padding: 0px 20px;
+    border-bottom: 2px solid rgb(240, 242, 245);
+
+    .trigger {
+        font-size: 20px;
+    }
 }
 
 .ant-layout.ant-layout-has-sider {
-    height: calc(100vh - 70px);
+    height: 100vh;
 }
 
 .ant-layout-sider {
     z-index: 3;
-    background: #4C6CEC !important;
+    background: linear-gradient(180deg, #242834, #1b2b76);
 }
 
-.ant-menu,
-.ant-menu-submenu>.ant-menu {
-    background: #4C6CEC !important;
+.ant-menu {
+    background: transparent;
     color: rgba(255, 255, 255, .6) !important;
 }
 
-.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-    background: #3C5FEA !important;
+.ant-menu-dark .ant-menu-inline.ant-menu-sub {
+    background: transparent;
+    box-shadow: none;
+}
+
+.ant-menu-submenu {
+    margin-top: 10px;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected,
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-active {
+    color: #004DFF;
+    background: transparent;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected::before,
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-active::before {
+    background: #004DFF;
+}
+
+.ant-menu-vertical .fx_specialItem {
+    padding: 0px !important;
+    text-align: center;
+}
+
+.fx_specialItem {
+    padding: 0px !important;
+
+    .fx_specialMenuItem {
+        padding: 0 24px;
+    }
+}
+
+.fx_specialItem:hover {
+    .fx_specialMenuItem {
+        background: linear-gradient(90deg, #009dff, #2d77ff) !important;
+        border-radius: 30px;
+        border: none !important;
+        margin: 0 auto;
+        color: #fff !important;
+    }
+}
+
+.ant-menu-submenu-selected .ant-menu-submenu-title,
+.fx_specialItem.ant-menu-item-selected {
+    background: linear-gradient(90deg, #009dff, #2d77ff) !important;
+    border-radius: 30px;
+    border: none !important;
+    margin: 0 auto;
     color: #fff !important;
 }
 
-.ant-menu-item:hover,
-.ant-menu-item-active {
-    color: #fff !important;
-}
-
-.ant-menu-submenu-vertical>.ant-menu-submenu-title .ant-menu-submenu-arrow::before,
-.ant-menu-submenu-vertical-left>.ant-menu-submenu-title .ant-menu-submenu-arrow::before,
-.ant-menu-submenu-vertical-right>.ant-menu-submenu-title .ant-menu-submenu-arrow::before,
-.ant-menu-submenu-inline>.ant-menu-submenu-title .ant-menu-submenu-arrow::before,
-.ant-menu-submenu-vertical>.ant-menu-submenu-title .ant-menu-submenu-arrow::after,
-.ant-menu-submenu-vertical-left>.ant-menu-submenu-title .ant-menu-submenu-arrow::after,
-.ant-menu-submenu-vertical-right>.ant-menu-submenu-title .ant-menu-submenu-arrow::after,
-.ant-menu-submenu-inline>.ant-menu-submenu-title .ant-menu-submenu-arrow::after {
-    display: none;
-}
-
-.ant-menu-submenu-inline>.ant-menu-submenu-title:hover,
-.ant-menu-submenu-selected {
-    color: #fff;
-}
-
-.ant-menu-inline .ant-menu-submenu-title {
-    padding-right: 10px !important;
+.ant-menu-submenu-inline:hover,
+.fx_specialItem:hover {
+    .ant-menu-submenu-title {
+        background: linear-gradient(90deg, #009dff, #2d77ff) !important;
+        border-radius: 30px;
+        border: none !important;
+        margin: 0 auto;
+        color: #fff !important;
+    }
 }
 
 .ant-menu-vertical .ant-menu-item::after,
 .ant-menu-vertical-left .ant-menu-item::after,
 .ant-menu-vertical-right .ant-menu-item::after,
 .ant-menu-inline .ant-menu-item::after {
-    border-right: 3px solid #2446cc
+    border: none;
 }
 
-.ant-menu-submenu-title span .iconfont,
-.ant-menu-item i {
-    font-size: 24px;
-    vertical-align: sub;
+.ant-tree.ant-tree-block-node li .ant-tree-node-content-wrapper {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.ant-breadcrumb {
-    cursor: pointer;
-}
-
-/*表单抽屉*/
-.ant-drawer-header {
-    position: fixed;
-    width: 88%;
-    z-index: 999;
-    background: #fff;
-    border-bottom: 1px solid #fff;
-    /* text-align: center; */
-}
-
-.ant-drawer-header .ant-drawer-title {
-    font-size: 22px !important;
-    font-weight: bold !important;
-}
-
-.ant-drawer-body {
-    margin-top: 35px;
-    overflow: auto;
-    height: 93%;
-}
-
-.drawerBtnBox {
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    border-top: 1px solid #e9e9e9;
-    padding: 10px 16px;
-    background: #fff;
-    text-align: center;
-    z-index: 999;
-}
-
-.ant-upload.ant-upload-select-picture-card,
-.ant-upload-list-picture-card .ant-upload-list-item {
-    width: 95px;
-}
-
-.ant-table-thead>tr>th {
-    font-weight: bold;
+.ant-menu-item .anticon,
+.ant-menu-submenu-title .anticon {
+    margin: 0px;
 }
