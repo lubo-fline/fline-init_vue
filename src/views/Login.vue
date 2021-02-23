@@ -42,10 +42,10 @@ export default {
 	},
 	methods: {
 		changeCode() {
-			this.$axios.get('/securityCode').then((data) => {
-                if (data.data.code == 200) {
-                    this.codeImg=data.data.data.imgBase64
-					this.codeToken=data.data.data.codeToken
+			this.$get('/securityCode').then((data) => {
+                if (data.code == 200) {
+                    this.codeImg=data.data.imgBase64
+					this.codeToken=data.data.codeToken
                 }
             });
 		},

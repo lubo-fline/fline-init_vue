@@ -113,9 +113,9 @@ export default {
             }
         },
         loadCurrentUser(){
-            this.$axios.get(this.$api.userDataUrl).then((data) => {
-                if (data.data.code == 200) {
-                    this.userData=data.data.data
+            this.$get(this.$api.userDataUrl).then((data) => {
+                if (data.code == 200) {
+                    this.userData=data.data
                     if(!this.userData||this.userData.userName==''){
                         this.$router.push({name:'login'});
                     };
@@ -149,7 +149,7 @@ export default {
         },
         //退出登录
         logout(){
-            this.$axios.get(this.$api.logoutUrl).then(res=>{
+            this.$get(this.$api.logoutUrl).then(res=>{
                 this.$router.push('/login');
                 this.$message.success('注销成功！');
             }).catch (err=>{

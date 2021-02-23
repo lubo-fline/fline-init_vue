@@ -5,6 +5,8 @@
     position: relative;
 }
 
+
+//下面的样式可按需调整修改
 .ant-layout-header {
     background: #fff;
     z-index: 2;
@@ -31,6 +33,10 @@
 .ant-menu {
     background: transparent;
     color: rgba(255, 255, 255, .6) !important;
+}
+
+.ant-menu-inline {
+    padding: 0 24px;
 }
 
 .ant-menu-dark .ant-menu-inline.ant-menu-sub {
@@ -71,7 +77,6 @@
         background: linear-gradient(90deg, #009dff, #2d77ff) !important;
         border-radius: 30px;
         border: none !important;
-        margin: 0 auto;
         color: #fff !important;
     }
 }
@@ -111,4 +116,11 @@
 .ant-menu-item .anticon,
 .ant-menu-submenu-title .anticon {
     margin: 0px;
+    font-size: 20px;
+    vertical-align: text-bottom;
+}
+
+.ant-menu-inline .ant-menu-submenu-title {
+    margin-top: 0;
+    margin-bottom: 0;
 }

@@ -88,7 +88,7 @@
                 current:1,
                 loading:false,
                 columns : [
-                   {
+                    {
                         title: '用户名',
                         dataIndex: 'username',
                         key:'username'
@@ -166,9 +166,9 @@
             //校验用户名唯一
             usernameValidate (rule, value, callback) {
                 if(this.okBtn!==1){
-                    this.$axios.get(`/user/username/exists/${value}`).then(data=>{
-                        if (data.data.code === 200) {
-                            if (value && data.data.data) {
+                    this.$get(`/user/username/exists/${value}`).then(data=>{
+                        if (data.code === 200) {
+                            if (value && data.data) {
                                 callback('该用户名已存在');
                             } else {
                                 callback();
@@ -260,10 +260,10 @@
                         })
                     }
                     this.rolesData=[];
-                    this.$axios.get('/role/all').then((data) => {
-                        if(data.data.code==200){
-                            if(data.data.data.length>0){
-                                data.data.data.forEach(item=>{
+                    this.$get('/role/all').then((data) => {
+                        if(data.code==200){
+                            if(data.data.length>0){
+                                data.data.forEach(item=>{
                                     item['key']=item.id.toString();
                                     item['title']=item.name
                                     this.rolesData.push(item)
@@ -308,9 +308,9 @@
             //获取部门树
             getTree() {
                 this.loading = true
-                this.$axios.get('/department/tree').then((data) => {
-                    if (data.data.code === 200) {
-                        this.departmentData=data.data.data?data.data.data:[]
+                this.$get('/department/tree').then((data) => {
+                    if (data.code === 200) {
+                        this.departmentData=data.data || []
                     }
                 });
             },

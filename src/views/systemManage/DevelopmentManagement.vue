@@ -110,9 +110,9 @@ export default {
 		// 获取部门树
 		getTree () {
 			this.loading = true
-			this.$axios.get('/department/tree').then((data) => {
-				if(data.data.code==200){
-					this.treeData = data.data.data
+			this.$get('/department/tree').then((data) => {
+				if(data.code==200){
+					this.treeData = data.data
 					generateList(this.treeData)
 				}
 			})
@@ -209,8 +209,8 @@ export default {
 				onOk () {
 					that.form.validateFieldsAndScroll((err, values) => {
 						if (!err) {
-							that.$axios.post(url, that.$qs.stringify(that.form.getFieldsValue())).then(data => {
-								if(data.data.code==200){
+							that.$post(url, that.$qs.stringify(that.form.getFieldsValue())).then(data => {
+								if(data.code==200){
 									that.getTree()
 									that.form.resetFields()
 									that.formDisabled = true

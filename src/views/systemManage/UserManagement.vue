@@ -88,7 +88,7 @@
                 current:1,
                 loading:false,
                 columns : [
-                   {
+                    {
                         title: '用户名',
                         dataIndex: 'username',
                         key:'username'
@@ -145,11 +145,11 @@
                 var params=this.searchForm.getFieldsValue();
                 params['pageSize']=this.pageSize;
                 params['pageNum']=this.current
-                this.$axios.get('/user/page',{params}).then((data) => {
+                this.$get('/user/page',params).then((data) => {
                     this.loading = false;
-                    if (data.data.code === 200) {
-                        this.total = data.data.data?data.data.data.count:0;
-                        this.tableData = data.data.data?data.data.data.items:[];
+                    if (data.code === 200) {
+                        this.total = data.data?data.data.count:0;
+                        this.tableData = data.data?data.data.items:[];
                     }
                 });
             },
@@ -163,9 +163,9 @@
             //校验用户名唯一
             usernameValidate (rule, value, callback) {
                 if(this.okBtn!==1){
-                    this.$axios.get(`/user/username/exists/${value}`).then(res=>{
-                        if (res.data.code == 200) {
-                            if (value && res.data.data) {
+                    this.$get(`/user/username/exists/${value}`).then(res=>{
+                        if (res.code == 200) {
+                            if (value && res.data) {
                                 callback('该用户名已存在');
                             } else {
                                 callback();
@@ -218,11 +218,11 @@
                     if (!err) {
                         this.confirmLoading = true;
                         var params=this.form.getFieldsValue();
-                        this.$axios.post(url,this.$qs.stringify(params)).then(res=>{
+                        this.$post(url,this.$qs.stringify(params)).then(res=>{
                             this.addVisible = false;
                             this.confirmLoading = false;
-                            if (res.data.code == 200) {
-                                this.$message.success(res.data.msg);
+                            if (res.code == 200) {
+                                this.$message.success(res.msg);
                             }
                             this.getTableData();
                         }).catch (err=>{
@@ -253,9 +253,9 @@
                             roleValue:this.tableSelectData.roleIds[0],//根据需要回显数据
                         })
                     }, 0)
-                    this.$axios.get('/role/all').then((data) => {
-                        if(data.data.code==200){
-                            this.rolesData=data.data.data?data.data.data:[];
+                    this.$get('/role/all').then((data) => {
+                        if(data.code==200){
+                            this.rolesData=data.data || [];
                         }
                     });
                 }else{

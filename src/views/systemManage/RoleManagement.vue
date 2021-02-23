@@ -127,17 +127,15 @@
             //获取角色表格数据
             getTableData(){
                 this.loading = true
-                this.$axios.get('/role/page',{
-                    params:{
-                        pageNum:this.current,
-                        pageSize:this.pageSize,
-                        name:this.searchForm.getFieldValue('name')
-                    }
+                this.$get('/role/page',{
+                    pageNum:this.current,
+                    pageSize:this.pageSize,
+                    name:this.searchForm.getFieldValue('name')
                 }).then((data) => {
                     this.loading = false;
-                    if (data.data.code === 200) {
-                        this.total = data.data.data?data.data.data.count:0;
-                        this.tableData = data.data.data?data.data.data.items:[];
+                    if (data.code === 200) {
+                        this.total = data.data?data.data.count:0;
+                        this.tableData = data.data?data.data.items:[];
                     }
                 });
             },
@@ -152,11 +150,11 @@
                             this.treeCheckedKeys.push(item.toString())
                         })
                     }
-                    this.$axios.get('/permission/menu/tree').then((data) => {
-                        if (data.data.code === 200) {
-                            this.treeData=data.data.data;
-                            for(var i=0;i<data.data.data.length;i++){
-                                this.expandedKeys.push(data.data.data[i].key)
+                    this.$get('/permission/menu/tree').then((data) => {
+                        if (data.code === 200) {
+                            this.treeData=data.data;
+                            for(var i=0;i<data.data.length;i++){
+                                this.expandedKeys.push(data.data[i].key)
                             }
                         }
                     });

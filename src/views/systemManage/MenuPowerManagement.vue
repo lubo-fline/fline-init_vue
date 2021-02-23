@@ -201,16 +201,16 @@
             //获取菜单树
             getTree() {
                 this.spinning = true
-                this.$axios.get('/permission/menu/tree').then((data) => {
+                this.$get('/permission/menu/tree').then((data) => {
                     this.spinning=false;
-                    if (data.data.code == 200) {
-                        this.treeData=data.data.data;
+                    if (data.code == 200) {
+                        this.treeData=data.data;
                         generateList(this.treeData)
-                        for(var i=0;i<data.data.data.length;i++){
-                            this.expandedKeys.push(data.data.data[i].key)
+                        for(var i=0;i<data.data.length;i++){
+                            this.expandedKeys.push(data.data[i].key)
                         }
                     } else {
-                        this.$message.error(data.data.msg);
+                        this.$message.error(data.msg);
                     };
                 });
             },
@@ -270,18 +270,16 @@
                 this.data =[]
                 if(this.selectedKeys.length!=0) {
                     this.loading = true
-                    this.$axios.get('/permission/button/list', {
-                        params: {
-                            menuId: this.selectedKeys[0]
-                        }
+                    this.$get('/permission/button/list', {
+                        menuId: this.selectedKeys[0]
                     }).then((data) => {
 						this.loading = false;
-						if (data.data.code == 200) {
-							if (data.data.data != null) {
-								this.data = data.data.data;
+						if (data.code == 200) {
+							if (data.data != null) {
+								this.data = data.data;
 							}
 						} else {
-							this.$message.error(data.data.msg);
+							this.$message.error(data.msg);
 						};
 					});
                 }
@@ -363,13 +361,13 @@
                         }else{
                             var params=that.formModal.getFieldsValue();
                         }
-                        that.$axios.post(url, that.$qs.stringify(params)).then(res => {
+                        that.$post(url, that.$qs.stringify(params)).then(res => {
                             that.spinning=false;
                             that.confirmLoading=false;
-                            if (res.data.code == 200) {
-                                that.$message.success(res.data.msg);
+                            if (res.code == 200) {
+                                that.$message.success(res.msg);
                             } else {
-                                that.$message.error(res.data.msg);
+                                that.$message.error(res.msg);
                             };
                             if(type=='btn'){
                                 that.getTableData()

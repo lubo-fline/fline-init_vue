@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import axios from './utils/axios'
+import axiosExpand from './utils/axiosExpand'
 import Antd from 'ant-design-vue';
 /** 缓存 */
 import Storage from 'vue-ls';
@@ -48,6 +49,10 @@ Vue.use(Storage, options);
 Vue.use(Antd);
 Vue.use(VueI18n);
 Vue.prototype.$axios = axios
+Vue.prototype.$get = axiosExpand.get
+Vue.prototype.$put = axiosExpand.put
+Vue.prototype.$delete = axiosExpand.delete
+Vue.prototype.$post = axiosExpand.post
 Vue.prototype.$qs = qs;
 Vue.prototype.$md5 = md5;
 Vue.prototype.$echarts = echarts
