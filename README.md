@@ -5,7 +5,7 @@
 ## 项目名称: vue前端框架模板
 
 ## 快速上手
-  - 安装: npm install
+  - 安装: npm install --registry http://172.16.3.27:4873
   - 启动: npm run serve
   - 打包: npm run build
 
