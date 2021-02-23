@@ -23,6 +23,9 @@ import './permission'
 import api from '@/api/index'
 /*ie兼容es6*/
 import "babel-polyfill";
+/**引入业务组件库 */
+import flineComponents from 'fline-components'
+import 'fline-components/lib/flineui.css'
 /* 引入自己的css、less、js */
 import "@a/less/components.less";
 import "@a/less/common.less";
@@ -48,6 +51,7 @@ axios.defaults.baseURL = "/fline/";
 Vue.use(Storage, options);
 Vue.use(Antd);
 Vue.use(VueI18n);
+Vue.use(flineComponents);
 Vue.prototype.$axios = axios
 Vue.prototype.$get = axiosExpand.get
 Vue.prototype.$put = axiosExpand.put
