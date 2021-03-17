@@ -16,7 +16,7 @@
     "babel-runtime": "^6.26.0",
     "core-js": "^3.6.4",
     "echarts": "^5.0.0",
-    "fline-components": "^0.1.9",
+    "fline-components": "^1.0.0",
     "image-webpack-loader": "^6.0.0",
     "js-md5": "^0.7.3",
     "mockjs": "^1.1.0",
