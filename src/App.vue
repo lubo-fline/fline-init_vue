@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class='fx_page' :style="{transform:transform}">
 		<a-config-provider :locale="zhCN">
 			<router-view/>
 		</a-config-provider>
@@ -16,9 +16,31 @@
 		data() {
 			return {
 				zhCN,
+				transform:'scale(1,1)'
 			};
 		},
+		mounted(){
+			this.initScale()
+			window.onresize = () =>{
+				this.initScale()
+			}
+		},
+		methods:{
+			initScale(){
+				let height=window.innerHeight;
+				let width=window.innerWidth;
+				this.transform = 'scale('+width/1920+','+height/1080+')'
+			},
+		}	
 	}
 </script>
 <style>
+	.fx_page{
+		width:1920px;
+		height:1080px;
+		overflow: hidden;
+		-moz-transform-origin: 0 0;
+		-webkit-transform-origin:0 0;
+		-o-transform-origin:0 0;
+	}
 </style>

@@ -16,7 +16,7 @@
     "babel-runtime": "^6.26.0",
     "core-js": "^3.9.1",
     "echarts": "^5.0.2",
-    "fline-components": "^1.0.4",
+    "fline-components": "^1.0.7",
     "js-md5": "^0.7.3",
     "mockjs": "^1.1.0",
     "moment": "^2.29.1",

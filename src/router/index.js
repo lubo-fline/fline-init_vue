@@ -73,6 +73,15 @@ export default new Router({
 			path: '/login',
 			name: 'login',
 			component: () => import('@/views/Login.vue')
+		},
+		{
+			path: '*',
+			name: '404',
+			component: () => import ('@/views/404.vue')
+		}, 
+		{
+			path: "*", // 此处需特别注意置于最底部
+			redirect: "/404"
 		}
 	]
 })

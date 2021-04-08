@@ -1,68 +1,74 @@
 <template>
-	<div class='f_loginBg'>
-		<div class='f_loinContent'>
-			<a-row>
-				<a-col :span='14'>
-					<img src='@/assets/image/loginBg.png' width='100%' height='500'/>
-				</a-col>
-				<a-col :span='10'>
-					<a-form :form='form' class='f_loginForm'>
-						<div class='f_loginTitle'>欢迎登陆</div>
-						<a-form-item>
-							<a-input placeholder="用户名" v-decorator="['username',{ rules: [{ required: true, message: '请输入用户名！' }] }]"/>
-						</a-form-item>
-						<a-form-item>
-							<a-input placeholder="密码" type="password" v-decorator="['password',{ rules: [{ required: true, message: '请输入密码！' }] }]"/>
-						</a-form-item>
-						<a-form-item>
-							<a-input placeholder="验证码" v-decorator="['code',{ rules: [{ required: true, message: '请输入验证码！' }] }]" class="f_codeInput"/>
-							<img title="点击更换验证码" id="codeImg" alt="验证码" :src="'data:image/png;base64,'+codeImg" @click="changeCode"/>
-						</a-form-item>
-						<a-button type="primary" class='marginB10' block size='large' :loading="isBtnLoading" @click="login">登录</a-button>
-						<a-button type="primary" class='marginB10' ghost block size='large' :loading="isBtnLoading" @click="login">注册</a-button>
-						<a href="javascript:;" class='pull-right'>密码重置</a>
-					</a-form>
-				</a-col>
-			</a-row>
-		</div>
+	<div class='fx_loginBg'>
+		<a-row class='heightP100'>
+			<a-col :span='16' class='heightP100'>
+				<img src='@/assets/image/loginBg.png' width="100%" height="100%"/>
+				<div class='fx_footer'>{{staticData.footerName}}</div>
+				<div class='fx_loginTitleImg'>
+					<img src='@/assets/image/logo.png'/>
+					<span class='marginL8'>{{staticData.potalEnteryName}}</span>
+					<span class='fontSize22 marginL8'>{{staticData.abbreviation}}</span>
+				</div>
+			</a-col>
+			<a-col :span='8' class='heightP100'>
+				<a-form :form='form' class='fx_loginForm'>
+					<div class='fx_loginTitle'>欢迎登录</div>
+					<a-form-item>
+						<a-input placeholder="用户名" v-decorator="['loginName',{ rules: [{ required: true, message: '请输入用户名！' }] }]">
+							<icon-font slot="prefix" type="iconwode" />
+						</a-input>
+					</a-form-item>
+					<a-form-item>
+						<a-input placeholder="密码" type="password" v-decorator="['password',{ rules: [{ required: true, message: '请输入密码！' }] }]">
+							<icon-font slot="prefix" type="iconpassword" />
+						</a-input>
+					</a-form-item>
+					<a-form-item>
+						<a-input placeholder="验证码" v-decorator="['verifyCode',{ rules: [{ required: true, message: '请输入验证码！' }] }]">
+							<icon-font slot="prefix" type="iconyanzhengma" />
+							<img id="codeImg" :src="codeImg" @click="changeCode" slot="suffix" class="colorFFF"/>
+						</a-input>
+					</a-form-item>
+					<a-button type="primary" class='fx_loginBtn' block size='large' :loading="isBtnLoading" @click="login">立即登录</a-button>
+				</a-form>
+			</a-col>
+		</a-row>
 	</div>
 </template>
 <script>
+const staticData = window.staticContentConfig.staticData
 export default {
 	data() {
 		return {
-			isBtnLoading:false,
+			staticData,
+			isBtnLoading:false,//登陆状态动画加载
 			codeImg:'',//验证码切换图片
 			form:this.$form.createForm(this),
 			securityCode:'',//验证码code
+			loginUrl:this.$api.loginUrl,
+			loginVerifyCode:this.$api.loginVerifyCode,
 		};
 	},
 	mounted:function(){
 		this.changeCode();
 	},
 	methods: {
+		//切换验证码
 		changeCode() {
-			this.$get('/securityCode').then((data) => {
+			this.$post(this.loginVerifyCode).then((data) => {
                 if (data.code == 200) {
-                    this.codeImg=data.data.imgBase64
-					this.codeToken=data.data.codeToken
+                    this.codeImg=data.data||''
                 }
             });
 		},
 		login(){
 			this.form.validateFields((err, values) => {
                 if (!err) {
-					this.$axios.post('/login',this.$qs.stringify({
-						"username":this.form.getFieldValue('username'),
-						"password":this.$md5(this.form.getFieldValue('password')),
-					}), {
-						headers: {
-							codeToken: this.codeToken,
-							securityCode:this.form.getFieldValue('code')
-						}
-					}).then(res=>{
-						if (res.data.code == 200) {
-							this.$router.push({name:'dishesList'});
+					var params=this.form.getFieldsValue()
+					this.$post(this.loginUrl,params).then(res=>{
+						if (res.code == 200) {
+							this.$router.push({name:'statics'});
+							localStorage.setItem("token", res.data.token);
 						}else {
 							this.changeCode();
 							this.$router.replace('/login');
@@ -76,5 +82,29 @@ export default {
 	}
 };
 </script>
-<style scoped>
+<style scoped lang='less'>
+.fx_footer{
+	position: absolute;
+	bottom: 50px;
+	left:50%;
+	margin-left: -152px;
+	color:#fff;
+}
+.fx_loginTitleImg{
+	position: absolute;
+	top:60px;
+	left:80px;
+	color:#fff;
+	font-family: '平方粗体';
+	font-size:32px;
+	letter-spacing:2px;
+}
+/deep/ .ant-input-affix-wrapper .ant-input-suffix {
+	top:39% ;
+	color: #d6d6d6;
+	font-size: 20px;
+    .fx_suffix {
+        height: 27px !important;
+    }
+}
 </style>
