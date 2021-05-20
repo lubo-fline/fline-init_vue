@@ -20,10 +20,10 @@
 			};
 		},
 		mounted(){
-			this.initScale()
-			window.onresize = () =>{
-				this.initScale()
-			}
+			// this.initScale()
+			// window.onresize = () =>{
+			// 	this.initScale()
+			// }
 		},
 		methods:{
 			initScale(){
@@ -35,12 +35,12 @@
 	}
 </script>
 <style>
-	.fx_page{
+	/* .fx_page{
 		width:1920px;
 		height:1080px;
 		overflow: hidden;
 		-moz-transform-origin: 0 0;
 		-webkit-transform-origin:0 0;
 		-o-transform-origin:0 0;
-	}
+	} */
 </style>
