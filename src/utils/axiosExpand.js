@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from './axios'
 const axiosExpand = {
     //获取数据
     get: (path = '', params) => {
