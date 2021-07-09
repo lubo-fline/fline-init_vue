@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-07-09 14:51:40
+ * @LastEditTime: 2021-07-09 14:52:02
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \fline-init_vue\src\main.js
+ */
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -55,7 +63,7 @@ Vue.use(flineComponents);
 Vue.prototype.$axios = axios
 Vue.prototype.$get = axiosExpand.get
 Vue.prototype.$put = axiosExpand.put
-Vue.prototype.$delete = axiosExpand.delete
+Vue.prototype.$del = axiosExpand.delete
 Vue.prototype.$post = axiosExpand.post
 Vue.prototype.$qs = qs;
 Vue.prototype.$md5 = md5;
