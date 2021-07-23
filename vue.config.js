@@ -58,7 +58,8 @@ module.exports = {
                     '@v': path.resolve(__dirname, './src/views'),
                     '@a': path.resolve(__dirname, './src/assets'),
                     '@u': path.resolve(__dirname, './src/utils'),
-                    '@m': path.resolve(__dirname, './src/mixins')
+                    '@m': path.resolve(__dirname, './src/mixins'),
+                    '@p': path.resolve(__dirname, './public'),
                 } // 别名配置
             }
         })
